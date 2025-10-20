@@ -1,5 +1,8 @@
 # production ready dockerfile that runs pnpm start
-FROM node:20.12.2-alpine3.19
+FROM node:20-alpine
+
+ARG PORT=3000
+EXPOSE ${PORT}
 
 # set working directory
 WORKDIR /app
@@ -34,4 +37,4 @@ RUN pnpm build
 ENV ALTO_JSON=true
 
 # start app
-ENTRYPOINT ["pnpm", "start"]
+CMD ["/bin/sh", "-c", "pnpm start ${ENTRYPOINTS:+--entrypoints $ENTRYPOINTS} ${RPC_URL:+--rpc-url $RPC_URL} ${EXECUTOR_PRIVATE_KEYS:+--executor-private-keys $EXECUTOR_PRIVATE_KEYS} ${UTILITY_PRIVATE_KEY:+--utility-private-key $UTILITY_PRIVATE_KEY} ${ENTRYPOINT_SIMULATION_CONTRACT_V7:+--entrypoint-simulation-contract-v7 $ENTRYPOINT_SIMULATION_CONTRACT_V7} --safe-mode=false --deploy-simulations-contract=false --balance-override=false --code-override-support=false"]
