@@ -1,0 +1,13 @@
+{
+  "network-name": "sophon-testnet",
+  "rpc-url": "https://zksync-os-testnet-sophon.zksync.dev",
+  "port": 3000,
+  "executor-private-keys": "0x0a64c2dbb70fb9059a354312467af1a5a6d4e041b67bcbebc11b1d7492d19142",
+  "utility-private-key": "0x0a64c2dbb70fb9059a354312467af1a5a6d4e041b67bcbebc11b1d7492d19142",
+  "entrypoints": "0x0000000071727De22E5E9d8BAf0edAc6f37da032",
+  "deploy-simulations-contract": true,
+  "enable-debug-endpoints": true,
+  "safe-mode": false,
+  "code-override-support": false,
+  "balance-override": false
+}
